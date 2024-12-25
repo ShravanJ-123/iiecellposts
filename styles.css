@@ -54,7 +54,6 @@ body::before {
     font-weight: bold;
     color: rgba(212, 212, 212);
 }
-
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -212,7 +211,37 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 20px;
+    }
     .container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        max-width: 1000px;
+        padding: 20px;
+        margin-left: 20px;
+    }
+    .card {
+        width: 130px;
+        height: 190px;
+    }
+    .Post{
+        font-size: 17px;
+    }
+    .name {
+        font-size: 1.3rem;
+    }
+    .card:hover .name {
+        font-size: 1.5rem;
+    }
+    .testimonial {
+        font-size: 12px;
+    }
+    .social-links {
+        font-size: 13px;
+    }
+    .social-links a {
+        margin: 4px 0;
+        padding: 6px 13px;
     }
 }
