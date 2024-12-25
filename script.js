@@ -17,3 +17,19 @@ document.querySelectorAll('.card').forEach(card => {
         });
     });
 });
+function updateCardTitle() {
+        const card1 = document.querySelector('.card1');
+        const card2 = document.querySelector('.card2');
+        
+        // Check if screen width is less than 768px
+        if (window.innerWidth < 768) {
+            // Swap entire content of card1 and card2
+            const card1HTML = card1.innerHTML;
+            card1.innerHTML = card2.innerHTML;
+            card2.innerHTML = card1HTML;
+        }
+}
+
+// Call the function when the page loads and whenever the window resizes
+window.addEventListener('load', updateCardTitle);
+window.addEventListener('resize', updateCardTitle);
