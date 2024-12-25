@@ -57,26 +57,24 @@ body::before {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Automatically adjust columns */
-    gap: 20px; /* Reduced gap for smaller screens */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
     max-width: 1100px;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     margin: 20px auto; /* Center horizontally */
 }
 
 .card {
     position: relative;
-    width: 100%; /* Make the card take full width within the grid */
-    max-width: 250px; /* Prevent cards from becoming too large */
-    height: auto; /* Allow height to adjust dynamically */
+    width: 170px;
+    height: 260px;
     perspective: 1000px;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    transition: transform 0.3s ease-in-out;
 }
-
 .card:hover {
-    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
 }
 
 .image {
