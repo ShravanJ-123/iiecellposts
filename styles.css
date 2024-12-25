@@ -66,8 +66,8 @@ body::before {
 
 .card {
     position: relative;
-    width: 170px;
-    height: 260px;
+    max-width: 170px;
+    max-height: 260px;
     perspective: 1000px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
