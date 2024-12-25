@@ -70,7 +70,6 @@ body::before {
     height: 260px;
     perspective: 1000px;
     cursor: pointer;
-    overflow: hidden;
     transition: transform 0.3s ease-in-out;
 }
 .card:hover {
