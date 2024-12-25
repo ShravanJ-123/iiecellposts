@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative; /* Make sure the pseudo-element is positioned relative to the body */
+    background: linear-gradient(to bottom right, #00041a, #000212);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body::before {
+    content: ''; /* Necessary for the pseudo-element to appear */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/batthern-1920x1080.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Adjust opacity here */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+
+/* Navbar */
+.navbar {
+    width: 20%;
+    padding: 10px 20px; /* Adjust padding as needed */
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    opacity: 1;
+    text-align: center;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    border-radius: 12px;
+    margin: 20px auto; /* Center horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the text */
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(212, 212, 212);
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 30px;
+    margin: 20px auto; /* Center horizontally */
+}
+
+.card {
+    position: relative;
+    width: 170px;
+    height: 260px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.image1 {
+    background-image: url('https://unsplash.com/photos/boy-sitting-on-floor-infront-of-tv-HObz0EVocLM/download?force=true&w=640');
+    transform: translateX(0) rotate(10deg);
+    z-index: 4;
+    background-color: #000421;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    opacity: 0.92;
+}
+
+.image2 {
+    transform: translateX(-5%) rotate(7deg);
+    z-index: 3;
+    background-color: #000421;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.image3 {
+    transform: translateX(-10%) rotate(4deg);
+    z-index: 2;
+    background-color: #00031a;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.image4 {
+    background-image: url('https://unsplash.com/photos/black-samsung-android-smartphone-displaying-man-in-blue-suit-7JsFH1B0oEg/download?force=true&w=640');
+    transform: translateX(-15%) rotate(1deg);
+    z-index: 1;
+    background-color: #00031a;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+}
+
+.Post{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 6; /* Ensure it's above the images */
+        /* background-color: rgba(0, 0, 0, 0.6); Semi-transparent background */
+        color: wheat;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 22px; /* Adjust font size as needed */
+        font-weight: bold;
+        text-align: center;
+}
+
+.name {
+    color: aliceblue;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover .name {
+    color: lightcoral;
+    font-size: 1.7rem;
+    top: 75%;
+}
+
+
+.card22{
+    background-image: url('images/Picsart_24-12-24_23-13-57-234.png');
+}
+
+
+.testimonial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7; /* Ensure it appears above the image */
+    /* background-color: rgba(0, 0, 0, 0.7);  */
+    color: wheat;
+    padding: 15px 20px;
+    /* border-radius: 10px; */
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    max-width: 90%;
+    width: 150px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); Subtle shadow for a lifted effect */
+}
+
+/* Social links container */
+.social-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7; /* Ensure it appears above the image */
+    text-align: center;
+    font-size: 17px;
+}
+
+/* Styling each link */
+.social-links a {
+    display: block; /* Ensures each link appears in a new row */
+    color: #b3b3ff;
+    text-decoration: none;
+    /* background-color: rgba(0, 0, 0, 0.7); Semi-transparent background */
+    margin: 5px 0; /* Spacing between rows */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for links */
+.social-links a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
